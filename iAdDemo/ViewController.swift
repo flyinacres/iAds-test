@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import iAd
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var adBanner: ADBannerView!
+    @IBOutlet weak var burro: UIButton!
+    
+    @IBAction func removeAd(sender: AnyObject) {
+        adBanner.removeFromSuperview()
+        burro.removeFromSuperview()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.canDisplayBannerAds = true
     }
 
     override func didReceiveMemoryWarning() {
